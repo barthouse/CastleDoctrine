@@ -1,0 +1,4 @@
+mandatory
+family
+wife
+playerSeeking
