@@ -1,0 +1,191 @@
+Version 4   2013-March-11
+
+--Added an on-screen button for typing '@' symbol on non-US keyboards.
+
+--House proving screen now explains that you can't use tools.
+
+--Changed living family members to jump back to original positions pos-robbery
+  (thanks Thibaut Girka).
+
+--Added tool and object occurrence reports to admin view.
+
+
+
+
+Version 3   2013-March-8
+
+--Fixed bug in game playback that could not handle extra recording argument 
+  (change highlights on/off flag).
+
+--Fixed a server-side bug that was causing house pings to fail when a user was
+  editing their house after robbing a house, and the robbed house was
+  simultaneously being edited by that house's owner (thanks Jeremiah Reid, who 
+  was spuriously timed out of his house 20 times). 
+
+--Fixed SQL query bug when searching house tables in web admin UI.
+
+--Dealt with houses-to-rob scarcity issue by keeping houses robbable after they
+  are successfully robbed the first time, as their money dwindles.  Before, a
+  house could only be robbed once before going back on the must-edit-again
+  queue. 
+
+--Fixed server bug that caused paintings to disappear from circulation when 
+  family members killed but vault not reached.
+
+--Server prevents a dual-client setup from keeping robber's own house checked 
+  out for edit during robbery and other non-edit actions.
+
+--Fixed bug that allowed walking over electrified floors post-robbery.
+
+--Fixed suicide button misbehavior when self-test forced post-robbery.
+
+--'Leave <-' message now pops in instantly if gallery is empty.
+
+--Backpack now resets properly when Restart button hit in robbery replay.
+
+--Added Faster button for robbery replays.
+
+--Server now saves your changed gallery ordering even if you haven't modified
+  your house otherwise (thanks Jeremiah Reid).
+
+--Ending a security tape now takes you back to security tape menu instead of 
+  main menu (thanks Jeremiah Reid).
+
+--Changed wording to 'View YOUR security tapes' to avoid confusion (some people
+  pick a house from the to-rob list and try to click that tape button).
+
+--Better wording of family exit warning (Family needs empty path to exit).
+
+--Better wording on house self-test page (reach your own vault).
+
+--Fixed long painting buy button tool tips that hung off edge of screen.
+
+--Fixed door/window orientation bug in north/south hallways.
+
+--Tool tip to explain the gravity of suicide.
+
+--Clicking object picker now brings up grid picker, in addition to clicking
+  grid button (thanks David Pittman).
+
+--Moving around no longer bumps object picker to top of stack (thanks Malcom 
+  McCrimmon).
+
+--Server now only archives robbery logs for dead owners 1 day, and living
+  owners 5 days.
+
+--Player earns $14 and wife earns $28 for each hour that player spends away 
+  from house.
+
+--Server now has a shutdown mode to block player requests during maintenance.
+
+--Fixed so that remapping WASD keys doesn't interfer with typing for searches.
+
+--Game client times out requests to server after 16 seconds and retries them
+  instead of giving up.
+
+--Fixed house pick lists so that tool tips don't linger when mouse leaves.
+
+--Removed down arrow when house pick list has a full page of results but no
+  additional pages ((thanks Jeremiah Reid).
+
+--Water wakes sleeping animals.  Sleeping animals can be killed.  Bricks wake
+  sleeping pit bulls.  Bricks kill chihuahuas and cats.
+
+--Ladder tool to cross trapdoors and pits.
+
+--Fixed stickiness of voltage detectors applied to wires and fixed a stickiness
+  bug with pit bulls fallen inside a closed trapdoor.
+
+
+
+
+
+Version 2    2013-February-27    (private pre-alpha)
+
+--Added recording and playback of time() values in game recording system.  This
+  fixes playback timing bugs when the playback machine runs the game slower
+  or faster than the original recording machine (or when playback is manually
+  slowed or sped up).
+
+--Removed an error-prone initial mouse-warp-to-center call that was potentially
+  causing future mouse motion events to be ignored.
+  
+--Fixed server typo that resulted in stolen paintings not being added to the
+  robber's house (thanks Allen Trivette).
+
+--Fixed TextField glitchy behavior when user types forbidden characters.
+
+--Fixed major bug in path finding for family-blocked-in detection 
+  (thanks Eric McQuiggan). 
+
+--Fixed tool tip bug that triggered music toggle button tip spuriously 
+  (thanks Garrett).
+
+--Fixed so that empty self-test recordings (when user edits backpack but 
+  not house map) do not replace last valid self-test recording in database.
+
+--Fixed 'Family blocked in' message overlaying Done button on house load.
+
+--Fixed dead wife sprites overhanging walls (and also moved all dead objects 
+  under wall shadows, which looks much better).
+
+--Added better logging of flush operations on server.
+
+--Fixed lingering pitbull attack stance post-robbery.
+
+--Fixed so that erase highlights (darkening) in editor match state of object 
+  being erased.
+
+--Changed so that picking up a family member who is standing with a mobile does
+  not erase that mobile.
+
+--Fixed so that dead wife not shown carrying money during self tests.
+
+--Security tapes are now saved whenever a robber dies (so owners can see their 
+  traps working).
+
+--Added push-doors (thanks Nicholas Rodine).
+
+--Tweaked window position to line up with push-doors.
+
+--Fixed typing @ on Spanish keyboards (thanks Manuel Magalhaes).
+
+--Fixed window title.
+
+--Greatly improved seek/avoid mobile behavior so that they don't get stuck on 
+  corners (thanks Nicholas Rodine).
+
+--Added key repeat after holding movement key for 0.5+ seconds (to move across 
+  house with less tedium than pressing [->] 32 times).
+
+--Added 'Pick one:' to picker grids to make them less confusing (thanks 
+  Madeleine Burleson).
+
+--Leaving house edit due to inactivity now returns you to the menu instead of 
+  right back to checking out your own house (less confusing if your house is 
+  being robbed in the meantime).
+
+--Changed so that house never times out during first edit (when house isn't 
+  vulnerable to being robbed anyway, because you must edit it first) (thanks 
+  Madeleine Burleson).
+
+--Added suicide button to edit page when balance is 0.
+
+--Revamped house edit billing to only charge for differences from old map,
+  allowing you to place, erase, and replace walls many times during the same
+  editing session without incuring cost of each replacement.  Makes editing
+  much more fluid and less Undo-button dependent.  Also allows mobiles
+  to be moved around without cost (because you are only charged for those 
+  placed in excess of the ones already in your house).
+
+--Added (optional) highlight features that shows the changes made to the
+  current house map as you edit it.
+
+
+
+
+
+
+Version 1    2013-January-25
+
+Initial release to private testers.
