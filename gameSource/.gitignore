@@ -1,0 +1,7 @@
+*.o
+*.dep
+CastleDoctrine.exe
+Makefile
+Makefile.minorGems_dependencies
+icon.ico
+icon.rc
