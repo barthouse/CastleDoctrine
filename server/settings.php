@@ -6,16 +6,16 @@
 // database (because tickets are used to uniquely identify users).
 
 $databaseServer = "localhost";
-$databaseUsername = "testUser";
-$databasePassword = "testPassword";
-$databaseName = "test";
+$databaseUsername = "root";
+$databasePassword = "mysqlpass";
+$databaseName = "castledb";
 
 // The URL of to the server.php script.
-$fullServerURL = "http://localhost/jcr13/castleServer/server.php";
+$fullServerURL = "http://localhost:8080/castleServer/server.php";
 
 // The URL of the ticket server's server.php script.
 // This is used to fetch assigned ticket IDs for users.
-$ticketServerURL = "http://localhost/jcr13/ticketServer/server.php";
+$ticketServerURL = "http://localhost:8080/ticketServer/server.php";
 
 
 // The ticket server encrypts the ticket IDs that it returns to us
@@ -56,7 +56,7 @@ $enableLog = 1;
 
 
 // should web-based admin require yubikey two-factor authentication?
-$enableYubikey = 1;
+$enableYubikey = 0;
 
 // 12-character Yubikey IDs, one list for each access password
 // each list is a set of ids separated by :
