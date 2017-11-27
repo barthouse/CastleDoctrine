@@ -7449,7 +7449,7 @@ function cd_simulateRobbery( $house_map,
         set_error_handler( "cd_noticeAndWarningHandler", E_NOTICE );
         
         // 1 second timeout before trying a different client
-        $socketFile = @stream_socket_client( "tcp://localhost:$port",
+        $socketFile = @stream_socket_client( "tcp://127.0.0.1:$port",
                                              $errno, $errstr, 1 );
 
         // reenable
